@@ -146,6 +146,17 @@ class Test(unittest.TestCase):
                 t &= (t-1)
             print " "
             i -= 1
+
+    def gcd(self, a, b):
+        while b:
+            a, b = b, a % b
+        return a
+
+    def test_gcd(self):
+        self.assertEqual(self.gcd(6, 4), 2)
+        self.assertEqual(self.gcd(480, 920), 40)
+        self.assertEqual(self.gcd(16, 18), 2)
+        self.assertEqual(self.gcd(7, 11), 1)
         
 if __name__ == "__main__":
     # import sys;sys.argv = ['', 'Test.testParity']
